@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
 
 interface SlideData {
@@ -16,7 +16,7 @@ const Navigation: React.FC<NavigationProps> = ({ slides }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [scrolling, setScrolling] = useState(false);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     if (index >= 0 && index < slides.length && !scrolling) {
       setScrolling(true);
       setCurrentSlideIndex(index);
@@ -33,9 +33,9 @@ const Navigation: React.FC<NavigationProps> = ({ slides }) => {
         setScrolling(false);
       }
     }
-  };
+  }, [slides, scrolling]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
       e.preventDefault();
       goToSlide(currentSlideIndex + 1);
@@ -43,9 +43,9 @@ const Navigation: React.FC<NavigationProps> = ({ slides }) => {
       e.preventDefault();
       goToSlide(currentSlideIndex - 1);
     }
-  };
+  }, [goToSlide, currentSlideIndex]);
 
-  const handleWheel = (e: WheelEvent) => {
+  const handleWheel = useCallback((e: WheelEvent) => {
     // Prevent default scrolling behavior
     e.preventDefault();
     
@@ -59,7 +59,7 @@ const Navigation: React.FC<NavigationProps> = ({ slides }) => {
         goToSlide(currentSlideIndex - 1);
       }
     }
-  };
+  }, [goToSlide, currentSlideIndex, scrolling]);
 
   // Set up intersection observer to detect which slide is in view
   useEffect(() => {

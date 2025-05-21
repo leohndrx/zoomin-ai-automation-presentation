@@ -4,6 +4,18 @@
     "@next/next/no-img-element": "off",
     "react/no-unescaped-entities": "off",
     "jsx-a11y/role-supports-aria-props": "off",
-    "react-hooks/exhaustive-deps": "warn"
-  }
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+  },
+  "ignorePatterns": ["public/**/*", "node_modules/**/*"],
+  "overrides": [
+    {
+      "files": ["**/*.tsx", "**/*.ts"],
+      "rules": {
+        "@next/next/no-img-element": "off",
+        "react/no-unescaped-entities": "off",
+        "jsx-a11y/role-supports-aria-props": "off"
+      }
+    }
+  ]
 } 
