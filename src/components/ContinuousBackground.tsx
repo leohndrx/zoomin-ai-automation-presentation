@@ -33,9 +33,9 @@ const ContinuousBackground: React.FC<ContinuousBackgroundProps> = ({
     window.addEventListener('resize', setCanvasSize);
     
     // Fixed colors - using direct hex colors to avoid HSL color shifts
-    const ORANGE_PRIMARY = '#FF6600'; // Exact hex color
-    const ORANGE_DARKER = '#CC5200'; // Darker version for gradients
-    const BEIGE_COLOR = '#FFF5E6';   // Light beige for middle slides
+    // const ORANGE_PRIMARY = '#FF6600'; // Exact hex color
+    // const ORANGE_DARKER = '#CC5200'; // Darker version for gradients
+    // const BEIGE_COLOR = '#FFF5E6';   // Light beige for middle slides
     
     // HSL values for particles (we'll still use HSL for particles and waves)
     const orangeHSL = {
@@ -44,11 +44,11 @@ const ContinuousBackground: React.FC<ContinuousBackgroundProps> = ({
       l: 50    // Medium lightness
     };
     
-    const beigeHSL = {
-      h: 36,   // Warm beige hue
-      s: 30,   // Low saturation
-      l: 94    // High lightness (very light)
-    };
+    // const beigeHSL = {
+    //   h: 36,   // Warm beige hue
+    //   s: 30,   // Low saturation
+    //   l: 94    // High lightness (very light)
+    // };
     
     // Particles configuration
     const particles: Particle[] = [];
@@ -111,7 +111,7 @@ const ContinuousBackground: React.FC<ContinuousBackgroundProps> = ({
     updateScrollPosition();
     
     // Animation timestamp for wave animation
-    let startTime = Date.now();
+    const startTime = Date.now();
     
     // Animation frame
     let animationId: number;

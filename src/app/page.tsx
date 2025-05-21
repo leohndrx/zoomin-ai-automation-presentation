@@ -1,16 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { FaRobot, FaTools, FaUsers, FaClock, FaChartLine, FaBullseye, FaPalette, FaCalendarCheck } from 'react-icons/fa';
-import { MdAnalytics, MdAutoAwesome, MdOutlineCampaign, MdPriceCheck } from 'react-icons/md';
+import { FaRobot, FaTools, FaUsers, FaCalendarCheck } from 'react-icons/fa';
+import { MdAutoAwesome } from 'react-icons/md';
 import { IoIosChatbubbles } from 'react-icons/io';
-import { RiCustomerService2Fill } from 'react-icons/ri';
 import { SiN8N } from 'react-icons/si';
 import { TbBrandOpenai } from 'react-icons/tb';
 import { BsArrowsFullscreen } from 'react-icons/bs';
 
 import Slide from '@/components/Slide';
-import Card from '@/components/Card';
 import Navigation from '@/components/Navigation';
 import ContinuousBackground from '@/components/ContinuousBackground';
 import TabInterface from '../components/TabInterface';

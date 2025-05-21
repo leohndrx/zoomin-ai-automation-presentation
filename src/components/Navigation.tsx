@@ -109,7 +109,7 @@ const Navigation: React.FC<NavigationProps> = ({ slides }) => {
       
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [slides, currentSlideIndex, scrolling]);
+  }, [slides, currentSlideIndex, scrolling, handleKeyDown, handleWheel]);
 
   return (
     <div className="fixed bottom-8 right-8 z-50 flex gap-4">
