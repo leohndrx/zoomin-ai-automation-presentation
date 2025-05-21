@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  /* Main Color Palette */
+  --orange-primary: #FF6600; /* Zoomin' Orange */
+  --orange-light: #ffedd5; /* Orange-100 */
+  --orange-dark: #cc5200; /* Darker Zoomin' Orange */
+  --orange-accent: #ff8533; /* Lighter Zoomin' Orange */
+  
+  /* Background Colors */
+  --bg-light: #f8fafc;
+  --bg-dark: #1e293b;
+  
+  /* Text Colors */
+  --text-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-saira), Arial, sans-serif;
+  scroll-behavior: smooth;
+  overflow: hidden; /* Prevent default scrolling */
+}
+
+.slide-container {
+  height: 100vh;
+  overflow-y: hidden; /* Hide scrollbar and prevent normal scrolling */
+  scroll-snap-type: none; /* Disable native scroll snap - we'll control this with JS */
+  position: relative;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom Utility Classes for Consistent Colors */
+.bg-brand-gradient {
+  background: linear-gradient(to bottom right, var(--orange-primary), var(--orange-dark));
+}
+
+.bg-brand-light-gradient {
+  background: linear-gradient(to right, var(--orange-light), #fff7ed);
+}
+
+.border-brand {
+  border-color: var(--orange-primary);
+}
+
+.text-brand {
+  color: var(--orange-primary);
+}
+
+/* Logo with fade out effect */
+.logo-fade-out {
+  mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
